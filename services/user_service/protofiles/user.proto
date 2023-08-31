@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package user;
+
+message Validate {
+    bool is_valid = 1;
+}
+
+message TokenPayload {
+    string token = 1;
+}
+
+service UserService {
+    rpc ValidateToken (TokenPayload) returns (Validate);
+}
